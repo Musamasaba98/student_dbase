@@ -17,6 +17,29 @@ void Student::addStudent() {
     cout << "Student added successfully!" << endl;
     
 }
-void Student::displayStudent() {
+void Student::displayStudents(){
+    // code to display all students
+    ifstream file("students.txt");
+    if (file.is_open()){
+       string line;
+       while (getline(file, line)){
+           cout << line << endl;
+       }
+       file.close();
+    }else{
+        cout << "Error! File not found." << endl;
+    }
+    
+}
+void Student::searchStudent(int rollNumber) {
     // code to display student details
+    ifstream file("students.txt");
+    while (file>>studentName>>studentRollNumber>>studentMarks){
+        if (studentRollNumber == rollNumber)
+        {
+           cout << "Student Found: " << studentRollNumber << " " << studentName << " " << studentMarks << endl;
+        }
+        
+    }
+    
 }

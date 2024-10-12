@@ -9,7 +9,8 @@ class Student{
         Student(int rollNumber, string name,double marks);
         ~Student();
         void addStudent();
-        void displayStudent();
+        void displayStudents();
+        void searchStudent(int rollNumber);
     protected:
         int studentRollNumber{0};
         string studentName{""};
